@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR Classes - Empowering Education Worldwide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Embedded CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f4f7fc;
+            color: #1a2b49;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #1a2b49;
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0.10rem 0;
+        }
+
+        .navbar {
+            background: transparent;
+            padding: 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            background: transparent;
+            padding: 0.5rem;
+            box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+            margin-left: 2rem;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 170, 255, 0.7);
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+
+        .navbar-nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding-top: 0.5rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 20px;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: #ffffff !important;
+            padding: 0.5rem 0 !important;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #00aaff !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #00aaff;
+            bottom: -4px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Carousel */
+        .hero-carousel {
+            height: 65vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-item {
+            height: 60vh;
+            position: relative;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .carousel-caption {
+            background: rgba(26, 43, 73, 0.7);
+            padding: 1rem;
+            border-radius: 10px;
+            color: #ffffff;
+        }
+
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%;
+            opacity: 0.9;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: #00aaff;
+            border-radius: 50%;
+            padding: 1.2rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-control-prev-icon.visible, .carousel-control-next-icon.visible {
+            opacity: 1;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #00aaff;
+            opacity: 0.8;
+        }
+
+        .carousel-indicators .active {
+            opacity: 1;
+            background-color: #1a2b49;
+        }
+
+        /* Section Styles */
+        .section-bg {
+            background: #ffffff;
+            padding: 5rem 0;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1a2b49;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 5px;
+            background: #00aaff;
+            position: absolute;
+            bottom: -1.2rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Card Styles */
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #1a2b49;
+        }
+
+        .card-text {
+            color: #4a5b78;
+        }
+
+        /* Feature Box */
+        .feature-box {
+            background: #f9fcff;
+            border-radius: 12px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Faculty Card */
+        .faculty-card {
+            background: #f9fcff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .faculty-img {
+            width: 40%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .faculty-content {
+            padding: 2rem;
+            width: 60%;
+        }
+
+        .faculty-content h5 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a2b49;
+        }
+
+        .faculty-content h6 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00aaff;
+            margin-top: 1.5rem;
+        }
+
+        .faculty-content p {
+            color: #4a5b78;
+            font-size: 1rem;
+        }
+
+        .faculty-content ul {
+            padding-left: 1.5rem;
+            color: #4a5b78;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background: #00aaff;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: #1a2b49;
+            transform: scale(1.08);
+        }
+
+        /* Map Wrapper */
+        .map-wrapper {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            background: #f9fcff;
+            padding: 1rem;
+        }
+
+        .map-toggle {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+        }
+
+        .map-toggle .btn {
+            margin-right: 10px;
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 50px;
+            background: #ffffff;
+            color: #1a2b49;
+            border: 1px solid #00aaff;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .map-toggle .btn.active {
+            background: #00aaff;
+            color: #ffffff;
+            border-color: #00aaff;
+        }
+
+        .map-toggle .btn:hover {
+            background: #00aaff;
+            color: #ffffff;
+        }
+
+        .map-content {
+            display: none;
+        }
+
+        .map-content.active {
+            display: block;
+        }
+
+        .map-content iframe {
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a2b49;
+            color: #ffffff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        /* Admission Open Banner */
+        .admission-open .badge {
+            background: linear-gradient(45deg, #28a745, #34c759);
+            color: #ffffff;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: #f9fcff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: #4a5b78;
+        }
+
+        .contact-info a {
+            color: #00aaff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #1a2b49;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.2rem;
+            color: #25D366;
+            vertical-align: middle;
+            margin-left: 5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .whatsapp-icon:hover {
+            transform: scale(1.2);
+            color: #1a2b49;
+        }
+
+        /* Class Timings Table */
+        .timings-table {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem;
+        }
+
+        .timing-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            font-size: 1rem;
+            color: #1a2b49;
+        }
+
+        .timing-row:last-child {
+            border-bottom: none;
+        }
+
+        .timing-row.closed {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        /* Reviews Carousel */
+        .reviews-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: #00aaff #e9ecef;
+        }
+
+        .reviews-carousel::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .reviews-carousel::-webkit-scrollbar-track {
+            background: #e9ecef;
+            border-radius: 10px;
+        }
+
+        .reviews-carousel::-webkit-scrollbar-thumb {
+            background: #00aaff;
+            border-radius: 10px;
+        }
+
+        .review-card {
+            flex: 0 0 300px;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+            color: #1a2b49;
+        }
+
+        .review-rating {
+            color: #f1c40f;
+        }
+
+        .review-text {
+            color: #4a5b78;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .btn-outline-primary {
+            border-color: #00aaff;
+            color: #00aaff;
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background: #00aaff;
+            color: #ffffff;
+        }
+
+        /* Gallery Grid Layout */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 170, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 170, 255, 0.5);
+        }
+
+        .gallery-image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 75%;
+        }
+
+        .gallery-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 170, 255, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 12px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0.8rem;
+            transform: translateY(15px);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .header { padding: 0.3rem 0; }
+            .logo-container { margin-left: 0.5rem; margin-top: 0.3rem; box-shadow: 0 5px 12px rgba(0, 170, 255, 0.5); }
+            .logo { width: 80px; }
+            .navbar-nav { gap: 0.5rem; padding-top: 0.3rem; }
+            .nav-link { font-size: 0.8rem; }
+            .hero-carousel { height: 50vh; }
+            .carousel-item { height: 50vh; }
+            .carousel-control-prev-icon, .carousel-control-next-icon { padding: 0.8rem; }
+            .carousel-caption { padding: 0.5rem; font-size: 0.8rem; }
+            .carousel-indicators [data-bs-target] { width: 8px; height: 8px; }
+            .section-bg { padding: 2rem 0; }
+            h2 { font-size: 1.8rem; }
+            h2::after { width: 60px; height: 4px; }
+            .card-img-top { height: 200px; }
+            .feature-box { padding: 1.5rem; }
+            .faculty-card { flex-direction: column; }
+            .faculty-img { width: 100%; height: 250px; }
+            .faculty-content { width: 100%; padding: 1rem; }
+            .map-wrapper { padding: 0.5rem; }
+            .map-content iframe { height: 300px; }
+            .reviews-carousel { gap: 1rem; }
+            .review-card { flex: 0 0 250px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.8rem; padding: 0.5rem; }
+            .gallery-caption { font-size: 0.9rem; padding: 0.5rem; }
+            .gallery-item { box-shadow: 0 4px 15px rgba(0, 170, 255, 0.25); }
+            .gallery-item:hover { box-shadow: 0 8px 25px rgba(0, 170, 255, 0.4); }
+            .admission-open .badge { font-size: 1.2rem; padding: 0.5rem 1.5rem; }
+            .contact-card { padding: 1rem; }
+            .timings-table { font-size: 0.9rem; }
+        }
+
+        @media (min-width: 577px) and (max-width: 768px) {
+            .logo-container { margin-left: 0.8rem; margin-top: 0.4rem; }
+            .logo { width: 80px; }
+            .nav-item:not(:last-child)::after { display: none; }
+            .nav-link { font-size: 0.85rem; }
+            .hero-carousel { height: 55vh; }
+            .carousel-item { height: 55vh; }
+            .carousel-control-prev-icon, .carousel-control-next-icon { padding: 1rem; }
+            .carousel-caption { padding: 0.7rem; font-size: 0.9rem; }
+            .carousel-indicators [data-bs-target] { width: 10px; height: 10px; }
+            .section-bg { padding: 3rem 0; }
+            h2 { font-size: 2rem; }
+            .card-img-top { height: 220px; }
+            .feature-box { padding: 2rem; }
+            .map-content iframe { height: 350px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; }
+            .gallery-caption { font-size: 0.95rem; }
+            .gallery-item { box-shadow: 0 5px 18px rgba(0, 170, 255, 0.3); }
+            .gallery-item:hover { box-shadow: 0 10px 28px rgba(0, 170, 255, 0.45); }
+        }
+
+        @media (min-width: 769px) and (max-width: 992px) {
+            .logo-container { margin-left: 1rem; }
+            .logo { width: 80px; }
+        }
+
+        @media (min-width: 993px) {
+            .logo-container { margin-left: 1rem; }
+            .logo { width: 80px; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav { flex-direction: column; align-items: flex-start; background: #1a2b49; padding: 1rem; }
+            .nav-item:not(:last-child)::after { display: none; }
+            .map-toggle { top: 10px; left: 10px; }
+            .map-toggle .btn { padding: 0.4rem 1rem; font-size: 0.9rem; }
+        }
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+            .hero-carousel { height: 60vh; }
+            .carousel-item { height: 60vh; }
+            .carousel-control-prev-icon, .carousel-control-next-icon { padding: 1.2rem; }
+            .carousel-caption { padding: 1rem; font-size: 1rem; }
+        }
+
+        @media (min-width: 1201px) {
+            .hero-carousel { height: 70vh; }
+            .carousel-item { height: 70vh; }
+            .carousel-control-prev-icon, .carousel-control-next-icon { padding: 1.5rem; }
+            .carousel-caption { padding: 1.2rem; font-size: 1.2rem; }
+            .carousel-indicators [data-bs-target] { width: 14px; height: 14px; }
+            .section-bg { padding: 6rem 0; }
+            h2 { font-size: 3.2rem; }
+            h2::after { width: 100px; height: 6px; }
+            .card-img-top { height: 300px; }
+            .feature-box { padding: 3rem; }
+            .faculty-content { padding: 3rem; }
+            .map-content iframe { height: 500px; }
+            .reviews-carousel { gap: 2rem; }
+            .review-card { flex: 0 0 350px; }
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
+            .gallery-caption { font-size: 1.1rem; padding: 1rem; }
+            .gallery-item { box-shadow: 0 8px 25px rgba(0, 170, 255, 0.35); }
+            .gallery-item:hover { box-shadow: 0 15px 40px rgba(0, 170, 255, 0.55); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="logo-container">
+                    <a class="navbar-brand" href="/">
+                        <img src="/SRClasses/static/images/SR_classes_logo.png" alt="SR Classes Logo" class="logo">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-start">
+                        <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#courses">COURSES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#features">FEATURES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#register">REGISTER</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#resources">RESOURCES</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#faculty">FACULTY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#gallery">GALLERY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel -->
+    <section id="home" class="hero-carousel">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/SRClasses/static/images/Mathematic_class.jpg" class="d-block w-100 carousel-img" alt="Mathematics Class" data-position="center 20%">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Mrs. Rashmi Dubey - Science Teacher</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/SRClasses/static/images/commerce_class1.jpg" class="d-block w-100 carousel-img" alt="Commerce Class" data-position="center 30%">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Mr. Satyam Gavhane - Mathematics Teacher</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-bg">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="/SRClasses/static/images/Mathematic_classes1.jpg" class="img-fluid rounded shadow" alt="About SR Classes">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">SR Classes is a premier coaching institute dedicated to holistic student development. Led by our expert faculty, we blend modern technology with a professional approach to prepare students for global challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section-bg">
+        <div class="container">
+            <h2>Our Courses</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/SRClasses/static/images/Mathematic_class.jpg" class="card-img-top" alt="Mathematics">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mathematics (CBSE/ICSE/State)</h5>
+                            <p class="card-text">Master Mathematics with expert guidance for all levels and boards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/SRClasses/static/images/Science_class.jpg" class="card-img-top" alt="Science">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Science (CBSE/ICSE/State)</h5>
+                            <p class="card-text">Explore Physics, Chemistry, and Biology with hands-on learning.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="/SRClasses/static/images/commerce_class.jpg" class="card-img-top" alt="Commerce">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Commerce (CBSE/State)</h5>
+                            <p class="card-text">Excel in Commerce with tailored coaching for various boards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section-bg">
+        <div class="container">
+            <h2>Why Choose SR Classes?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="feature-box p-4">
+                        <i class="bi bi-person-check fs-1 text-primary"></i>
+                        <h5 class="mt-3">Experienced Faculty</h5>
+                        <p>Learn from experts with years of teaching experience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box p-4">
+                        <i class="bi bi-laptop fs-1 text-primary"></i>
+                        <h5 class="mt-3">Modern Technology</h5>
+                        <p>Interactive tools and resources for effective learning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-box p-4">
+                        <i class="bi bi-person-lines-fill fs-1 text-primary"></i>
+                        <h5 class="mt-3">Personalized Guidance</h5>
+                        <p>Tailored support to meet individual student needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Registration Portal -->
+    <section id="register" class="section-bg">
+        <div class="container">
+            <h2>Student Registration</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <form action="/submit-registration" method="POST" class="card p-4">
+                        <div class="mb-3">
+                            <label for="reg-name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="reg-name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reg-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="reg-email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reg-phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="reg-phone" name="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reg-course" class="form-label">Course</label>
+                            <select class="form-control" id="reg-course" name="course" required>
+                                <option value="Mathematics">Mathematics</option>
+                                <option value="Science">Science</option>
+                                <option value="Commerce">Commerce</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reg-board" class="form-label">Board</label>
+                            <select class="form-control" id="reg-board" name="board" required>
+                                <option value="CBSE">CBSE</option>
+                                <option value="ICSE">ICSE</option>
+                                <option value="State">State</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Resources Section -->
+    <section id="resources" class="section-bg">
+        <div class="container">
+            <h2>Student Resources</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Math Notes</h5>
+                            <a href="/SRClasses/static/resources/math_notes.pdf" class="btn btn-primary" download>Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Science Guide</h5>
+                            <a href="/SRClasses/static/resources/science_guide.pdf" class="btn btn-primary" download>Download</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Commerce Basics</h5>
+                            <a href="/SRClasses/static/resources/commerce_basics.pdf" class="btn btn-primary" download>Download</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="section-bg">
+        <div class="container">
+            <h2>Our Faculty</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="faculty-card">
+                        <img src="/SRClasses/static/images/rashmisharma.jpeg" class="faculty-img" alt="Mrs. Rashmi Dubey">
+                        <div class="faculty-content">
+                            <h5>Mrs. Rashmi Dubey</h5>
+                            <p class="text-muted">Science Teacher</p>
+                            <h6>Education:</h6>
+                            <ul>
+                                <li>Bachelor of Education in Science, Biology, and Geography</li>
+                                <li>Master of Science in Botany (Biology)</li>
+                                <li>Bachelor of Science in Secondary Education</li>
+                            </ul>
+                            <h6>Experience:</h6>
+                            <p>With 14 years of teaching experience, I specialize in Science, human biology, genetics, and environmental science.</p>
+                            <h6>Teaching Philosophy:</h6>
+                            <p>Science is best learned through exploration and hands-on activities, connecting concepts to real-world situations.</p>
+                            <h6>Passion:</h6>
+                            <p>Inspiring the next generation of scientists to explore the wonders of the natural world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="faculty-card">
+                        <img src="/SRClasses/static/images/satyamgavhane.jpeg" class="faculty-img" alt="Mr. Satyam Gavhane">
+                        <div class="faculty-content">
+                            <h5>Mr. Satyam Gavhane</h5>
+                            <p class="text-muted">Mathematics Teacher</p>
+                            <h6>Education:</h6>
+                            <ul>
+                                <li>Bachelor of Education in Mathematics</li>
+                                <li>Master of Science in Mathematics</li>
+                                <li>Bachelor of Science in Secondary Education</li>
+                            </ul>
+                            <h6>Experience:</h6>
+                            <p>Over 7 years of teaching experience in Mathematics, algebra, calculus, and problem-solving.</p>
+                            <h6>Teaching Philosophy:</h6>
+                            <p>Mathematics is a language of logic, best taught through interactive problem-solving and real-life applications.</p>
+                            <h6>Passion:</h6>
+                            <p>Igniting a love for numbers and fostering critical thinking in students.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-bg">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="/SRClasses/static/images/Mathematic_class.jpg" class="gallery-img" alt="Mathematics Class">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Mathematics Class in Action</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="/SRClasses/static/images/Science_class.jpg" class="gallery-img" alt="Science Class">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Exploring Science Concepts</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="/SRClasses/static/images/commerce_class.jpg" class="gallery-img" alt="Commerce Class">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Commerce Class Session</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image-wrapper">
+                        <img src="/SRClasses/static/images/commerce_class1.jpg" class="gallery-img" alt="Commerce Class 2">
+                        <div class="gallery-overlay">
+                            <div class="gallery-caption">Interactive Commerce Learning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="admission-open text-center mb-4">
+                <span class="badge bg-success fs-4 py-3 px-5">Admission Open</span>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card p-4">
+                        <h3 class="text-center mb-4">Send Us a Message</h3>
+                        <form action="/submit-contact" method="POST">
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contact-name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contact-email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-phone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="contact-phone" name="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Message</label>
+                                <textarea class="form-control" id="contact-message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Send Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="contact-card p-4">
+                        <h3 class="text-center mb-4">Get in Touch</h3>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong> <a href="mailto:sgclasses01@gmail.com">sgclasses01@gmail.com</a></p>
+                            <p><strong>Mobile:</strong> 
+                                <a href="tel:7058132712">7058132712</a> 
+                                <a href="https://wa.me/7058132712" target="_blank">
+                                    <i class="bi bi-whatsapp whatsapp-icon"></i>
+                                </a>
+                            </p>
+                            <p><strong>Mobile:</strong> 
+                                <a href="tel:9301143868">9301143868</a> 
+                                <a href="https://wa.me/9301143868" target="_blank">
+                                    <i class="bi bi-whatsapp whatsapp-icon"></i>
+                                </a>
+                            </p>
+                            <p><strong>Location:</strong> Shop no 101, Satyakamal colony, Nere Balaji marbles, Chakan road, Talegaon Dabhade.</p>
+                        </div>
+                        <h4 class="text-center mt-4 mb-3">Class Timings</h4>
+                        <div class="timings-table">
+                            <div class="timing-row">
+                                <span>Monday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row">
+                                <span>Tuesday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row">
+                                <span>Wednesday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row">
+                                <span>Thursday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row">
+                                <span>Friday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row">
+                                <span>Saturday</span>
+                                <span>3:30pm – 9:00pm</span>
+                            </div>
+                            <div class="timing-row closed">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="map-wrapper mt-4">
+                        <h3 class="text-center mb-4 map-heading">Map</h3>
+                        <div class="map-toggle">
+                            <button id="mapView" class="btn btn-primary active">Map View</button>
+                            <button id="360View" class="btn btn-primary">360° View</button>
+                        </div>
+                        <div id="googleMap" class="map-content active">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.345195735606!2d73.671827614885!3d18.64528198734047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c4e8e8e8e9%3A0x8e8e8e8e8e8e8e8e!2sTalegaon%20Dabhade%2C%20Maharashtra%20410606%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div id="360Map" class="map-content">
+                            <iframe src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4f13.1!5m2!1sen!2sin!3m5!1s0x3bc2b9c4e8e8e8e9:0x8e8e8e8e8e8e8e8e!7i13312!8i6656!2m3!1f0!2f0!3f0" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-8">
+                    <h3 class="text-center mb-4">What Our Students Say</h3>
+                    <div class="reviews-carousel">
+                        <div class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Sanket Patil</span>
+                                <span class="review-rating">★★★★★</span>
+                            </div>
+                            <p class="review-text">"Best classes for Science and Maths! The teachers are very supportive and the teaching methods are excellent."</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Priya Sharma</span>
+                                <span class="review-rating">★★★★★</span>
+                            </div>
+                            <p class="review-text">"I improved my grades significantly after joining SR Classes. Highly recommend for Commerce students!"</p>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-header">
+                                <span class="reviewer-name">Amit Deshmukh</span>
+                                <span class="review-rating">★★★★☆</span>
+                            </div>
+                            <p class="review-text">"Great faculty and modern teaching techniques. The environment is very motivating."</p>
+                        </div>
+                    </div>
+                    <p class="text-center mt-3"><a href="https://maps.app.goo.gl/WieW6G5JTTgmH8eS8" target="_blank" class="btn btn-outline-primary">See More Reviews on Google</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 SR Classes. All rights reserved.</p>
+            <p>Email: <a href="mailto:sgclasses01@gmail.com">sgclasses01@gmail.com</a> | Mobile: <a href="tel:7058132712">7058132712</a> | <a href="tel:9301143868">9301143868</a></p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Carousel Initialization
+            const carousel = new bootstrap.Carousel(document.querySelector('#heroCarousel'), {
+                interval: 3000,
+                ride: 'carousel',
+                pause: 'hover'
+            });
+
+            // Smooth Scroll for Nav Links
+            document.querySelectorAll('.nav-link').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Map Toggle Functionality
+            const mapViewBtn = document.getElementById('mapView');
+            const view360Btn = document.getElementById('360View');
+            const googleMap = document.getElementById('googleMap');
+            const view360Map = document.getElementById('360Map');
+
+            mapViewBtn.addEventListener('click', () => {
+                mapViewBtn.classList.add('active');
+                view360Btn.classList.remove('active');
+                googleMap.classList.add('active');
+                view360Map.classList.remove('active');
+            });
+
+            view360Btn.addEventListener('click', () => {
+                view360Btn.classList.add('active');
+                mapViewBtn.classList.remove('active');
+                view360Map.classList.add('active');
+                googleMap.classList.remove('active');
+            });
+
+            // Dynamically adjust object-position for carousel images
+            document.querySelectorAll('.carousel-img').forEach(img => {
+                const position = img.getAttribute('data-position');
+                if (position) {
+                    img.style.objectPosition = position;
+                }
+            });
+
+            // Show/Hide Carousel Control Icons on Click
+            const prevButton = document.querySelector('.carousel-control-prev');
+            const nextButton = document.querySelector('.carousel-control-next');
+            const prevIcon = document.querySelector('.carousel-control-prev-icon');
+            const nextIcon = document.querySelector('.carousel-control-next-icon');
+
+            function showIcons() {
+                prevIcon.classList.add('visible');
+                nextIcon.classList.add('visible');
+            }
+
+            function hideIcons() {
+                setTimeout(() => {
+                    prevIcon.classList.remove('visible');
+                    nextIcon.classList.remove('visible');
+                }, 2000);
+            }
+
+            prevButton.addEventListener('click', () => {
+                showIcons();
+                hideIcons();
+            });
+
+            nextButton.addEventListener('click', () => {
+                showIcons();
+                hideIcons();
+            });
+        });
+    </script>
+</body>
+</html>
