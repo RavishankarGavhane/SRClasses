@@ -12,20 +12,16 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <!-- Bottom Row -->
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <!-- Logo with Round Shape -->
                 <div class="logo-container">
                     <a class="navbar-brand" href="/">
-                        <img src="/static/images/SR_clsses_logo.png" alt="SR Classes Logo" class="logo">
+                        <img src="/SR_Classes_Website/static/images/SR_classes_logo.png" alt="SR Classes Logo" class="logo">
                     </a>
                 </div>
-                <!-- Toggler for Mobile -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Navigation Links (Top Right) -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-start">
                         <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
@@ -42,6 +38,7 @@
             </div>
         </nav>
     </header>
+
     <!-- Hero Carousel -->
     <section id="home" class="hero-carousel">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -51,13 +48,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="/static/images/Mathematic_class.jpg" class="d-block w-100 carousel-img" alt="Mathematics Class" data-position="center 20%">
+                    <img src="/SR_Classes_Website/static/images/Mathematic_class.jpg" class="d-block w-100 carousel-img" alt="Mathematics Class" data-position="center 20%">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Mrs. Rashmi Dubey - Science Teacher</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="/static/images/comerse_class1.jpg" class="d-block w-100 carousel-img" alt="Mathematics Classes" data-position="center 30%">
+                    <img src="/SR_Classes_Website/static/images/commerce_class1.jpg" class="d-block w-100 carousel-img" alt="Mathematics Classes" data-position="center 30%">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Mr. Satyam Gavhane - Mathematics Teacher</h5>
                     </div>
@@ -80,7 +77,7 @@
             <h2>About Us</h2>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <img src="/static/images/Mathematic_classes1.jpg" class="img-fluid rounded shadow" alt="About SR Classes">
+                    <img src="/SR_Classes_Website/static/images/Mathematic_classes1.jpg" class="img-fluid rounded shadow" alt="About SR Classes">
                 </div>
                 <div class="col-md-6">
                     <p class="lead">SR Classes is a premier coaching institute dedicated to holistic student development. Led by our expert faculty, we blend modern technology with a professional approach to prepare students for global challenges.</p>
@@ -96,7 +93,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="/static/images/Mathematic_class.jpg" class="card-img-top" alt="Mathematics">
+                        <img src="/SR_Classes_Website/static/images/Mathematic_class.jpg" class="card-img-top" alt="Mathematics">
                         <div class="card-body text-center">
                             <h5 class="card-title">Mathematics (CBSE/ICSE/State)</h5>
                             <p class="card-text">Master Mathematics with expert guidance for all levels and boards.</p>
@@ -105,7 +102,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="/static/images/Science_classs.jpg" class="card-img-top" alt="Science">
+                        <img src="/SR_Classes_Website/static/images/Science_class.jpg" class="card-img-top" alt="Science">
                         <div class="card-body text-center">
                             <h5 class="card-title">Science (CBSE/ICSE/State)</h5>
                             <p class="card-text">Explore Physics, Chemistry, and Biology with hands-on learning.</p>
@@ -114,7 +111,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="/static/images/comerse_class.jpg" class="card-img-top" alt="Commerce">
+                        <img src="/SR_Classes_Website/static/images/commerce_class.jpg" class="card-img-top" alt="Commerce">
                         <div class="card-body text-center">
                             <h5 class="card-title">Commerce (CBSE/State)</h5>
                             <p class="card-text">Excel in Commerce with tailored coaching for various boards.</p>
@@ -161,6 +158,7 @@
             <h2>Student Registration</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
+                    <!-- Note: This form won't work on GitHub Pages without a backend -->
                     <form action="/submit-registration" method="POST" class="card p-4">
                         <div class="mb-3">
                             <label for="reg-name" class="form-label">Full Name</label>
@@ -206,7 +204,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h5 class="card-title">Math Notes</h5>
-                            <a href="/static/resources/math_notes.pdf" class="btn btn-primary" download>Download</a>
+                            <a href="/SR_Classes_Website/static/resources/math_notes.pdf" class="btn btn-primary" download>Download</a>
                         </div>
                     </div>
                 </div>
@@ -214,7 +212,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h5 class="card-title">Science Guide</h5>
-                            <a href="/static/resources/science_guide.pdf" class="btn btn-primary" download>Download</a>
+                            <a href="/SR_Classes_Website/static/resources/science_guide.pdf" class="btn btn-primary" download>Download</a>
                         </div>
                     </div>
                 </div>
@@ -222,7 +220,7 @@
                     <div class="card">
                         <div class="card-body text-center">
                             <h5 class="card-title">Commerce Basics</h5>
-                            <a href="/static/resources/commerce_basics.pdf" class="btn btn-primary" download>Download</a>
+                            <a href="/SR_Classes_Website/static/resources/commerce_basics.pdf" class="btn btn-primary" download>Download</a>
                         </div>
                     </div>
                 </div>
@@ -235,10 +233,9 @@
         <div class="container">
             <h2>Our Faculty</h2>
             <div class="row">
-                <!-- Mrs. Rashmi Dubey -->
                 <div class="col-md-6 mb-4">
                     <div class="faculty-card">
-                        <img src="/static/images/rashmisharma.jpeg" class="faculty-img" alt="Mrs. Rashmi Dubey">
+                        <img src="/SR_Classes_Website/static/images/rashmisharma.jpeg" class="faculty-img" alt="Mrs. Rashmi Dubey">
                         <div class="faculty-content">
                             <h5>Mrs. Rashmi Dubey</h5>
                             <p class="text-muted">Science Teacher</p>
@@ -257,10 +254,9 @@
                         </div>
                     </div>
                 </div>
-                <!-- Mr. Satyam Gavhane -->
                 <div class="col-md-6 mb-4">
                     <div class="faculty-card">
-                        <img src="/static/images/satyamgavhane.jpeg" class="faculty-img" alt="Mr. Satyam Gavhane">
+                        <img src="/SR_Classes_Website/static/images/satyamgavhane.jpeg" class="faculty-img" alt="Mr. Satyam Gavhane">
                         <div class="faculty-content">
                             <h5>Mr. Satyam Gavhane</h5>
                             <p class="text-muted">Mathematics Teacher</p>
@@ -290,7 +286,7 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="/static/images/Mathematic_class.jpg" class="gallery-img" alt="Mathematics Class">
+                        <img src="/SR_Classes_Website/static/images/Mathematic_class.jpg" class="gallery-img" alt="Mathematics Class">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Mathematics Class in Action</div>
                         </div>
@@ -298,7 +294,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="/static/images/Science_classs.jpg" class="gallery-img" alt="Science Class">
+                        <img src="/SR_Classes_Website/static/images/Science_class.jpg" class="gallery-img" alt="Science Class">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Exploring Science Concepts</div>
                         </div>
@@ -306,7 +302,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="/static/images/comerse_class.jpg" class="gallery-img" alt="Commerce Class">
+                        <img src="/SR_Classes_Website/static/images/commerce_class.jpg" class="gallery-img" alt="Commerce Class">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Commerce Class Session</div>
                         </div>
@@ -314,7 +310,7 @@
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image-wrapper">
-                        <img src="/static/images/comerse_class1.jpg" class="gallery-img" alt="Commerce Class 2">
+                        <img src="/SR_Classes_Website/static/images/commerce_class1.jpg" class="gallery-img" alt="Commerce Class 2">
                         <div class="gallery-overlay">
                             <div class="gallery-caption">Interactive Commerce Learning</div>
                         </div>
@@ -323,22 +319,19 @@
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section with Map, Timings, and Reviews -->
+
+    <!-- Contact Section -->
     <section id="contact" class="section-bg">
         <div class="container">
             <h2>Contact Us</h2>
-
-            <!-- Admission Open Banner -->
             <div class="admission-open text-center mb-4">
                 <span class="badge bg-success fs-4 py-3 px-5">Admission Open</span>
             </div>
-
             <div class="row justify-content-center">
-                <!-- Contact Form -->
                 <div class="col-md-6 mb-4">
                     <div class="contact-card p-4">
                         <h3 class="text-center mb-4">Send Us a Message</h3>
+                        <!-- Note: This form won't work on GitHub Pages without a backend -->
                         <form action="/submit-contact" method="POST">
                             <div class="mb-3">
                                 <label for="contact-name" class="form-label">Name</label>
@@ -360,8 +353,6 @@
                         </form>
                     </div>
                 </div>
-
-                <!-- Contact Details and Class Timings -->
                 <div class="col-md-6 mb-4">
                     <div class="contact-card p-4">
                         <h3 class="text-center mb-4">Get in Touch</h3>
@@ -381,8 +372,6 @@
                             </p>
                             <p><strong>Location:</strong> Shop no 101, Satyakamal colony, Nere Balaji marbles, Chakan road, Talegaon Dabhade.</p>
                         </div>
-
-                        <!-- Class Timings -->
                         <h4 class="text-center mt-4 mb-3">Class Timings</h4>
                         <div class="timings-table">
                             <div class="timing-row">
@@ -417,8 +406,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Map Section -->
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="map-wrapper mt-4">
@@ -431,18 +418,16 @@
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.345195735606!2d73.671827614885!3d18.64528198734047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c4e8e8e8e9%3A0x8e8e8e8e8e8e8e8e!2sTalegaon%20Dabhade%2C%20Maharashtra%20410606%2C%20India!5e0!3m2!1sen!2sin!4v1698765432100!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                         <div id="360Map" class="map-content">
-                            <iframe src="https://www.google.com/maps/@18.64528198734047,73.671827614885,3a,75y,90t/data=!3m4!1e1!3m2!1sAF1QipN...!2e10!7i13312!8i6656" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <!-- Replace with full Street View URL -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!3m2!1sen!2sin!4f13.1!5m2!1sen!2sin!3m5!1s0x3bc2b9c4e8e8e8e9:0x8e8e8e8e8e8e8e8e!7i13312!8i6656!2m3!1f0!2f0!3f0" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Google Maps Reviews -->
             <div class="row justify-content-center mt-5">
                 <div class="col-md-8">
                     <h3 class="text-center mb-4">What Our Students Say</h3>
                     <div class="reviews-carousel">
-                        <!-- Review 1 -->
                         <div class="review-card">
                             <div class="review-header">
                                 <span class="reviewer-name">Sanket Patil</span>
@@ -450,7 +435,6 @@
                             </div>
                             <p class="review-text">"Best classes for Science and Maths! The teachers are very supportive and the teaching methods are excellent."</p>
                         </div>
-                        <!-- Review 2 -->
                         <div class="review-card">
                             <div class="review-header">
                                 <span class="reviewer-name">Priya Sharma</span>
@@ -458,7 +442,6 @@
                             </div>
                             <p class="review-text">"I improved my grades significantly after joining SR Classes. Highly recommend for Commerce students!"</p>
                         </div>
-                        <!-- Review 3 -->
                         <div class="review-card">
                             <div class="review-header">
                                 <span class="reviewer-name">Amit Deshmukh</span>
