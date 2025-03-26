@@ -1,0 +1,1026 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fc;
+    color: #1a2b49;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    background: #1a2b49; /* Solid blue background, no image */
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0.10rem 0; /* Reduced padding for a compact header */
+}
+
+/* Bottom Row (Navbar) */
+.navbar {
+    background: transparent;
+    padding: 0; /* Minimal padding to keep it tight */
+}
+
+/* Container for better alignment */
+.navbar .container {
+    display: flex;
+    align-items: flex-start; /* Aligns content to the top */
+    justify-content: space-between;
+}
+
+/* Logo Container */
+.logo-container {
+    background: transparent; /* No background color */
+    padding: 0.5rem; /* Minimal padding for spacing */
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5); /* Blue shadow with #00aaff */
+    margin-left: 2rem; /* Keep the left margin */
+    margin-top: 0.5rem; /* Adjust top margin for better alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-container:hover {
+    transform: scale(1.1); /* Subtle hover effect */
+    box-shadow: 0 10px 30px rgba(0, 170, 255, 0.7); /* Stronger blue shadow on hover */
+}
+
+.logo {
+    width: 100px; /* Increased width to better fit the logo */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+/* Navigation Links (Top Right) */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem; /* Reduced gap for a tighter layout */
+    padding-top: 0.5rem; /* Aligns links to the top */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.6); /* Softer separator */
+}
+
+.nav-link {
+    font-weight: 700;
+    font-size: 0.9rem; /* Slightly smaller for a compact look */
+    text-transform: uppercase;
+    color: #ffffff !important;
+    padding: 0.5rem 0 !important;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00aaff !important;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00aaff;
+    bottom: -4px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Underline effect on hover */
+}
+
+/* Hero Carousel */
+.hero-carousel {
+    height: 65vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 60vh;
+    position: relative;
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.carousel-caption {
+    background: rgba(26, 43, 73, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    opacity: 0.9;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #00aaff;
+    border-radius: 50%;
+    padding: 1.2rem;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #00aaff;
+    opacity: 0.8;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #1a2b49;
+}
+
+/* Section Styles */
+.section-bg {
+    background: #ffffff;
+    padding: 5rem 0;
+}
+
+h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #1a2b49;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background: #00aaff;
+    position: absolute;
+    bottom: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #1a2b49;
+}
+
+.card-text {
+    color: #4a5b78;
+}
+
+/* Feature Box */
+.feature-box {
+    background: #f9fcff;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-8px);
+}
+
+/* Faculty Card */
+.faculty-card {
+    background: #f9fcff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.faculty-card:hover {
+    transform: translateY(-10px);
+}
+
+.faculty-img {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.faculty-content {
+    padding: 2rem;
+    width: 60%;
+}
+
+.faculty-content h5 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a2b49;
+}
+
+.faculty-content h6 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #00aaff;
+    margin-top: 1.5rem;
+}
+
+.faculty-content p {
+    color: #4a5b78;
+    font-size: 1rem;
+}
+
+.faculty-content ul {
+    padding-left: 1.5rem;
+    color: #4a5b78;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: #00aaff;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #1a2b49;
+    transform: scale(1.08);
+}
+
+/* Map Wrapper (Updated to avoid conflict) */
+.map-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background: #f9fcff;
+    padding: 1rem;
+}
+
+.map-toggle {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1;
+}
+
+.map-toggle .btn {
+    margin-right: 10px;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #1a2b49;
+    border: 1px solid #00aaff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.map-toggle .btn.active {
+    background: #00aaff;
+    color: #ffffff;
+    border-color: #00aaff;
+}
+
+.map-toggle .btn:hover {
+    background: #00aaff;
+    color: #ffffff;
+}
+
+.map-content {
+    display: none;
+}
+
+.map-content.active {
+    display: block;
+}
+
+.map-content iframe {
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: #1a2b49;
+    color: #ffffff;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+footer a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .header {
+        padding: 0.3rem 0;
+    }
+
+    .logo-container {
+        margin-left: 0.5rem;
+        margin-top: 0.3rem;
+        box-shadow: 0 5px 12px rgba(0, 170, 255, 0.5); /* Blue shadow for small screens */
+    }
+
+    .logo {
+        width: 80px; /* Smaller width for mobile */
+    }
+
+    .navbar-nav {
+        gap: 0.5rem;
+        padding-top: 0.3rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .logo-container {
+        margin-left: 0.8rem;
+        margin-top: 0.4rem;
+    }
+    
+    .logo {
+        width: 80px; /* Adjusted for medium screens */
+    }
+
+    .nav-item:not(:last-child)::after {
+        display: none;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .logo-container {
+        margin-left: 1rem;
+    }
+
+    .logo {
+        width: 80px; /* Adjusted for larger screens */
+    }
+}
+
+@media (min-width: 993px) {
+    .logo-container {
+        margin-left: 1rem;
+    }
+
+    .logo {
+        width: 80px; /* Default size for larger screens */
+    }
+}
+
+/* Additional responsive adjustments for other sections */
+@media (max-width: 768px) {
+    .hero-carousel {
+        height: 60vh;
+    }
+
+    .carousel-item {
+        height: 60vh;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #1a2b49;
+        padding: 1rem;
+    }
+
+    .nav-item:not(:last-child)::after {
+        display: none;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-bg {
+        padding: 3rem 0;
+    }
+
+    .faculty-card {
+        flex-direction: column;
+    }
+
+    .faculty-img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .faculty-content {
+        width: 100%;
+    }
+
+    .map-toggle {
+        top: 10px;
+        left: 10px;
+    }
+
+    .map-toggle .btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .carousel-caption {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* New Styles for Contact Section */
+
+/* Admission Open Banner */
+.admission-open .badge {
+    background: linear-gradient(45deg, #28a745, #34c759);
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+}
+
+/* Contact Card */
+.contact-card {
+    background: #f9fcff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    color: #4a5b78;
+}
+
+.contact-info a {
+    color: #00aaff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #1a2b49;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    font-size: 1.2rem; /* Adjust size to match the design */
+    color: #25D366; /* WhatsApp green color */
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.2); /* Same hover effect as before */
+    color: #1a2b49; /* Change color on hover to match the link hover */
+}
+
+/* Class Timings Table */
+.timings-table {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+.timing-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 1rem;
+    color: #1a2b49;
+}
+
+.timing-row:last-child {
+    border-bottom: none;
+}
+
+.timing-row.closed {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Reviews Carousel */
+.reviews-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: #00aaff #e9ecef;
+}
+
+.reviews-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reviews-carousel::-webkit-scrollbar-track {
+    background: #e9ecef;
+    border-radius: 10px;
+}
+
+.reviews-carousel::-webkit-scrollbar-thumb {
+    background: #00aaff;
+    border-radius: 10px;
+}
+
+.review-card {
+    flex: 0 0 300px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #1a2b49;
+}
+
+.review-rating {
+    color: #f1c40f;
+}
+
+.review-text {
+    color: #4a5b78;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Button Styles for Reviews Link */
+.btn-outline-primary {
+    border-color: #00aaff;
+    color: #00aaff;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #00aaff;
+    color: #ffffff;
+}
+
+/* Responsive Adjustments for Contact Section */
+@media (max-width: 576px) {
+    .admission-open .badge {
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .contact-card {
+        padding: 1rem;
+    }
+
+    .timings-table {
+        font-size: 0.9rem;
+    }
+
+    .review-card {
+        flex: 0 0 250px;
+    }
+}
+
+/* New Additions for Carousel Control Visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    opacity: 0; /* Hide by default */
+    transition: opacity 0.3s ease; /* Smooth transition for visibility */
+}
+
+.carousel-control-prev-icon.visible,
+.carousel-control-next-icon.visible {
+    opacity: 1; /* Show when the 'visible' class is added */
+}
+
+/* Enhanced Responsive Adjustments for Carousel */
+
+/* Mobile Devices (≤576px) */
+@media (max-width: 576px) {
+    .hero-carousel {
+        height: 50vh; /* Smaller height for mobile */
+    }
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 0.8rem; /* Smaller icons for mobile */
+    }
+
+    .carousel-caption {
+        padding: 0.5rem;
+        font-size: 0.8rem; /* Smaller caption text */
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 8px;
+        height: 8px; /* Smaller indicators for mobile */
+    }
+}
+
+/* Tablets (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .hero-carousel {
+        height: 55vh; /* Slightly larger for tablets */
+    }
+
+    .carousel-item {
+        height: 55vh;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 1rem; /* Slightly larger icons for tablets */
+    }
+
+    .carousel-caption {
+        padding: 0.7rem;
+        font-size: 0.9rem; /* Slightly larger caption text */
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 10px;
+        height: 10px; /* Slightly larger indicators */
+    }
+}
+
+/* Desktops (769px–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .hero-carousel {
+        height: 60vh; /* Standard height for desktops */
+    }
+
+    .carousel-item {
+        height: 60vh;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 1.2rem; /* Standard icon size */
+    }
+
+    .carousel-caption {
+        padding: 1rem;
+        font-size: 1rem; /* Standard caption text */
+    }
+}
+
+/* Large Screens/TVs (≥1201px) */
+@media (min-width: 1201px) {
+    .hero-carousel {
+        height: 70vh; /* Larger height for TVs and large screens */
+    }
+
+    .carousel-item {
+        height: 70vh;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 1.5rem; /* Larger icons for better visibility on big screens */
+    }
+
+    .carousel-caption {
+        padding: 1.2rem;
+        font-size: 1.2rem; /* Larger caption text for better readability */
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 14px;
+        height: 14px; /* Larger indicators for big screens */
+    }
+}
+
+/* Enhanced Responsive Adjustments for Other Sections */
+
+/* Mobile Devices (≤576px) */
+@media (max-width: 576px) {
+    .section-bg {
+        padding: 2rem 0; /* Reduced padding for mobile */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Smaller heading for mobile */
+    }
+
+    h2::after {
+        width: 60px; /* Smaller underline for mobile */
+        height: 4px;
+    }
+
+    .card-img-top {
+        height: 200px; /* Smaller card images for mobile */
+    }
+
+    .feature-box {
+        padding: 1.5rem; /* Reduced padding for feature boxes */
+    }
+
+    .faculty-content {
+        padding: 1rem; /* Reduced padding for faculty content */
+    }
+
+    .map-wrapper {
+        padding: 0.5rem; /* Reduced padding for map wrapper */
+    }
+
+    .map-content iframe {
+        height: 300px; /* Smaller map height for mobile */
+    }
+
+    .reviews-carousel {
+        gap: 1rem; /* Smaller gap for reviews */
+    }
+}
+
+/* Tablets (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .section-bg {
+        padding: 3rem 0; /* Slightly larger padding for tablets */
+    }
+
+    h2 {
+        font-size: 2rem; /* Slightly larger heading for tablets */
+    }
+
+    .card-img-top {
+        height: 220px; /* Slightly larger card images */
+    }
+
+    .feature-box {
+        padding: 2rem; /* Slightly larger padding for feature boxes */
+    }
+
+    .map-content iframe {
+        height: 350px; /* Slightly larger map height for tablets */
+    }
+}
+
+/* Large Screens/TVs (≥1201px) */
+@media (min-width: 1201px) {
+    .section-bg {
+        padding: 6rem 0; /* Larger padding for big screens */
+    }
+
+    h2 {
+        font-size: 3.2rem; /* Larger heading for big screens */
+    }
+
+    h2::after {
+        width: 100px; /* Larger underline for big screens */
+        height: 6px;
+    }
+
+    .card-img-top {
+        height: 300px; /* Larger card images for big screens */
+    }
+
+    .feature-box {
+        padding: 3rem; /* Larger padding for feature boxes */
+    }
+
+    .faculty-content {
+        padding: 3rem; /* Larger padding for faculty content */
+    }
+
+    .map-content iframe {
+        height: 500px; /* Larger map height for big screens */
+    }
+
+    .reviews-carousel {
+        gap: 2rem; /* Larger gap for reviews */
+    }
+
+    .review-card {
+        flex: 0 0 350px; /* Larger review cards for big screens */
+    }
+}
+
+/* New Styles for Gallery Section */
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller images with 200px min-width */
+    gap: 1rem; /* Reduced gap for a tighter layout */
+    padding: 1rem;
+}
+
+/* Gallery Item */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px; /* Slightly smaller border-radius for smaller images */
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.3); /* Blue shadow with #00aaff */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px); /* Slightly smaller lift on hover */
+    box-shadow: 0 12px 30px rgba(0, 170, 255, 0.5); /* Stronger blue shadow on hover */
+}
+
+/* Image Wrapper */
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 75%; /* 4:3 aspect ratio for smaller, more compact images */
+}
+
+/* Gallery Image */
+.gallery-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images are clear and fit nicely */
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Overlay for Hover Effect */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 170, 255, 0.85); /* Slightly darker blue overlay for better contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* Caption for Gallery Images */
+.gallery-caption {
+    color: #ffffff;
+    font-size: 1rem; /* Smaller font size for smaller images */
+    font-weight: 600;
+    text-align: center;
+    padding: 0.8rem;
+    transform: translateY(15px); /* Adjusted for smaller images */
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments for Gallery */
+
+/* Mobile Devices (≤576px) */
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller for mobile */
+        gap: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .gallery-image-wrapper {
+        padding-top: 75%; /* Maintain 4:3 aspect ratio */
+    }
+
+    .gallery-caption {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .gallery-item {
+        box-shadow: 0 4px 15px rgba(0, 170, 255, 0.25); /* Slightly lighter shadow for mobile */
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 8px 25px rgba(0, 170, 255, 0.4);
+    }
+}
+
+/* Tablets (577px–768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Slightly larger for tablets */
+        gap: 1rem;
+    }
+
+    .gallery-caption {
+        font-size: 0.95rem;
+    }
+
+    .gallery-item {
+        box-shadow: 0 5px 18px rgba(0, 170, 255, 0.3);
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 10px 28px rgba(0, 170, 255, 0.45);
+    }
+}
+
+/* Large Screens/TVs (≥1201px) */
+@media (min-width: 1201px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Slightly larger for big screens */
+        gap: 1.5rem;
+    }
+
+    .gallery-caption {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    .gallery-item {
+        box-shadow: 0 8px 25px rgba(0, 170, 255, 0.35);
+    }
+
+    .gallery-item:hover {
+        box-shadow: 0 15px 40px rgba(0, 170, 255, 0.55);
+    }
+}
