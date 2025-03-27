@@ -13,10 +13,12 @@ templates = Jinja2Templates(directory="templates")
 async def read_root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+
 @app.post("/submit-contact")
 async def submit_contact(name: str = Form(...), email: str = Form(...), phone: str = Form(...), message: str = Form(...)):
     print(f"Contact: {name}, {email}, {phone}, {message}")
     return {"message": "Inquiry submitted successfully"}
+
 
 @app.post("/submit-registration")
 async def submit_registration(name: str = Form(...), email: str = Form(...), phone: str = Form(...), course: str = Form(...), board: str = Form(...)):
