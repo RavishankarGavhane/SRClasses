@@ -18,7 +18,7 @@
             padding: 0;
             overflow-x: hidden;
         }
-
+    
         /* Header Styles */
         .header {
             background: #1a2b49;
@@ -29,52 +29,83 @@
             z-index: 1000;
             padding: 0.10rem 0;
         }
-
+    
         .navbar {
             background: transparent;
             padding: 0;
         }
-
+    
         .navbar .container {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
         }
-
+    
         .logo-container {
             background: transparent;
-            padding: 1.5rem;
-            box-shadow: 0 1px 1px rgba(0, 170, 255, 0.5);
-            margin-left: 1px;
-            margin-top: 0.1rem;
+            padding: 0.5rem; /* Adjusted padding for a tighter fit */
+            margin-left: 1rem; /* Adjusted for positioning */
+            margin-top: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: transform 0.7s ease, box-shadow 0.7s ease;
+            transition: transform 0.3s ease;
         }
-
+    
         .logo-container:hover {
-            transform: scale(5.5);
-            box-shadow: 0 1px 1px rgba(0, 170, 255, 0.7);
+            transform: scale(1.05); /* Subtle hover effect */
         }
-
+    
+        .logo-wrapper {
+            width: 80px; /* Matches w-20 from Tailwind (5rem = 80px) */
+            height: 80px; /* Matches h-20 from Tailwind */
+            background: #ffffff; /* White background */
+            border-radius: 50%; /* Circular shape */
+            overflow: hidden; /* Ensures image stays within bounds */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25rem; /* Slight padding inside the circle */
+        }
+    
         .logo {
-            width: 100px;
-            height: auto;
+            width: 100%; /* Fills the wrapper */
+            height: 100%; /* Fills the wrapper */
+            object-fit: contain; /* Ensures logo scales properly */
             display: block;
         }
-
+    
+        .logo-text {
+            margin-left: 1rem; /* Space between logo and text */
+        }
+    
+        .logo-title {
+            font-size: 1.5rem; /* Matches text-2xl from Tailwind */
+            font-weight: 700; /* Bold */
+            background: linear-gradient(to right, #1e3a8a, #4f46e5); /* Gradient from blue-800 to indigo-900 */
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent; /* Makes the gradient visible */
+        }
+    
+        .logo-subtitle {
+            font-size: 0.875rem; /* Matches text-sm from Tailwind */
+            color: #6b7280; /* Matches text-gray-600 */
+            margin: 0; /* Removes default paragraph margin */
+        }
+    
         .navbar-nav {
             display: flex;
             align-items: center;
             gap: 1.2rem;
             padding-top: 0.7rem;
         }
-
+    
         .nav-item {
             position: relative;
         }
-
+    
         .nav-item:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -85,7 +116,7 @@
             width: 1px;
             background: rgba(255, 255, 255, 0.6);
         }
-
+    
         .nav-link {
             font-weight: 700;
             font-size: 0.9rem;
@@ -95,12 +126,12 @@
             position: relative;
             transition: color 0.3s ease, transform 0.3s ease;
         }
-
+    
         .nav-link:hover {
             color: #00aaff !important;
             transform: translateY(-2px);
         }
-
+    
         .nav-link::after {
             content: '';
             position: absolute;
@@ -111,46 +142,46 @@
             left: 0;
             transition: width 0.3s ease;
         }
-
+    
         .nav-link:hover::after {
             width: 100%;
         }
-
+    
         /* Hero Carousel */
         .hero-carousel {
             height: 65vh;
             position: relative;
             overflow: hidden;
         }
-
+    
         .carousel-inner {
             height: 100%;
         }
-
+    
         .carousel-item {
             height: 60vh;
             position: relative;
         }
-
+    
         .carousel-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center center;
         }
-
+    
         .carousel-caption {
             background: rgba(26, 43, 73, 0.7);
             padding: 1rem;
             border-radius: 10px;
             color: #ffffff;
         }
-
+    
         .carousel-control-prev, .carousel-control-next {
             width: 5%;
             opacity: 0.9;
         }
-
+    
         .carousel-control-prev-icon, .carousel-control-next-icon {
             background-color: #00aaff;
             border-radius: 50%;
@@ -158,11 +189,11 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-
+    
         .carousel-control-prev-icon.visible, .carousel-control-next-icon.visible {
             opacity: 1;
         }
-
+    
         .carousel-indicators [data-bs-target] {
             width: 12px;
             height: 12px;
@@ -170,18 +201,18 @@
             background-color: #00aaff;
             opacity: 0.8;
         }
-
+    
         .carousel-indicators .active {
             opacity: 1;
             background-color: #1a2b49;
         }
-
+    
         /* Section Styles */
         .section-bg {
             background: #ffffff;
             padding: 5rem 0;
         }
-
+    
         h2 {
             font-size: 2.8rem;
             font-weight: 700;
@@ -190,7 +221,7 @@
             color: #1a2b49;
             position: relative;
         }
-
+    
         h2::after {
             content: '';
             width: 80px;
@@ -201,7 +232,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-
+    
         /* Card Styles */
         .card {
             border: none;
@@ -209,26 +240,26 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+    
         .card:hover {
             transform: translateY(-12px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
         }
-
+    
         .card-img-top {
             height: 250px;
             object-fit: cover;
         }
-
+    
         .card-title {
             font-weight: 700;
             color: #1a2b49;
         }
-
+    
         .card-text {
             color: #4a5b78;
         }
-
+    
         /* Feature Box */
         .feature-box {
             background: #f9fcff;
@@ -236,11 +267,11 @@
             box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
             transition: transform 0.3s ease;
         }
-
+    
         .feature-box:hover {
             transform: translateY(-8px);
         }
-
+    
         /* Faculty Card */
         .faculty-card {
             background: #f9fcff;
@@ -251,45 +282,45 @@
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-
+    
         .faculty-card:hover {
             transform: translateY(-10px);
         }
-
+    
         .faculty-img {
             width: 40%;
             height: 100%;
             object-fit: cover;
         }
-
+    
         .faculty-content {
             padding: 2rem;
             width: 60%;
         }
-
+    
         .faculty-content h5 {
             font-size: 1.8rem;
             font-weight: 700;
             color: #1a2b49;
         }
-
+    
         .faculty-content h6 {
             font-size: 1.2rem;
             font-weight: 600;
             color: #00aaff;
             margin-top: 1.5rem;
         }
-
+    
         .faculty-content p {
             color: #4a5b78;
             font-size: 1rem;
         }
-
+    
         .faculty-content ul {
             padding-left: 1.5rem;
             color: #4a5b78;
         }
-
+    
         /* Button Styles */
         .btn-primary {
             background: #00aaff;
@@ -299,12 +330,12 @@
             font-weight: 600;
             transition: background 0.3s ease, transform 0.3s ease;
         }
-
+    
         .btn-primary:hover {
             background: #1a2b49;
             transform: scale(1.08);
         }
-
+    
         /* Map Wrapper */
         .map-wrapper {
             position: relative;
@@ -314,14 +345,14 @@
             background: #f9fcff;
             padding: 1rem;
         }
-
+    
         .map-toggle {
             position: absolute;
             top: 15px;
             left: 15px;
             z-index: 1;
         }
-
+    
         .map-toggle .btn {
             margin-right: 10px;
             padding: 0.5rem 1.5rem;
@@ -332,30 +363,30 @@
             border: 1px solid #00aaff;
             transition: background 0.3s ease, color 0.3s ease;
         }
-
+    
         .map-toggle .btn.active {
             background: #00aaff;
             color: #ffffff;
             border-color: #00aaff;
         }
-
+    
         .map-toggle .btn:hover {
             background: #00aaff;
             color: #ffffff;
         }
-
+    
         .map-content {
             display: none;
         }
-
+    
         .map-content.active {
             display: block;
         }
-
+    
         .map-content iframe {
             border-radius: 10px;
         }
-
+    
         /* Footer */
         footer {
             background: #1a2b49;
@@ -363,17 +394,17 @@
             padding: 3rem 0;
             text-align: center;
         }
-
+    
         footer a {
             color: #00aaff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+    
         footer a:hover {
             color: #ffffff;
         }
-
+    
         /* Admission Open Banner */
         .admission-open .badge {
             background: linear-gradient(45deg, #28a745, #34c759);
@@ -383,7 +414,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border-radius: 50px;
         }
-
+    
         /* Contact Card */
         .contact-card {
             background: #f9fcff;
@@ -391,27 +422,27 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
         }
-
+    
         .contact-card:hover {
             transform: translateY(-5px);
         }
-
+    
         .contact-info p {
             margin-bottom: 0.8rem;
             font-size: 1rem;
             color: #4a5b78;
         }
-
+    
         .contact-info a {
             color: #00aaff;
             text-decoration: none;
             transition: color 0.3s ease;
         }
-
+    
         .contact-info a:hover {
             color: #1a2b49;
         }
-
+    
         .whatsapp-icon {
             font-size: 1.2rem;
             color: #25D366;
@@ -419,12 +450,12 @@
             margin-left: 5px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
-
+    
         .whatsapp-icon:hover {
             transform: scale(1.2);
             color: #1a2b49;
         }
-
+    
         /* Class Timings Table */
         .timings-table {
             background: #ffffff;
@@ -432,7 +463,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             padding: 1rem;
         }
-
+    
         .timing-row {
             display: flex;
             justify-content: space-between;
@@ -441,16 +472,16 @@
             font-size: 1rem;
             color: #1a2b49;
         }
-
+    
         .timing-row:last-child {
             border-bottom: none;
         }
-
+    
         .timing-row.closed {
             color: #dc3545;
             font-weight: 600;
         }
-
+    
         /* Reviews Carousel */
         .reviews-carousel {
             display: flex;
@@ -460,21 +491,21 @@
             scrollbar-width: thin;
             scrollbar-color: #00aaff #e9ecef;
         }
-
+    
         .reviews-carousel::-webkit-scrollbar {
             height: 8px;
         }
-
+    
         .reviews-carousel::-webkit-scrollbar-track {
             background: #e9ecef;
             border-radius: 10px;
         }
-
+    
         .reviews-carousel::-webkit-scrollbar-thumb {
             background: #00aaff;
             border-radius: 10px;
         }
-
+    
         .review-card {
             flex: 0 0 300px;
             background: #ffffff;
@@ -483,33 +514,33 @@
             padding: 1.5rem;
             transition: transform 0.3s ease;
         }
-
+    
         .review-card:hover {
             transform: translateY(-5px);
         }
-
+    
         .review-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.5rem;
         }
-
+    
         .reviewer-name {
             font-weight: 600;
             color: #1a2b49;
         }
-
+    
         .review-rating {
             color: #f1c40f;
         }
-
+    
         .review-text {
             color: #4a5b78;
             font-size: 0.95rem;
             line-height: 1.5;
         }
-
+    
         .btn-outline-primary {
             border-color: #00aaff;
             color: #00aaff;
@@ -517,12 +548,12 @@
             padding: 0.5rem 1.5rem;
             transition: background 0.3s ease, color 0.3s ease;
         }
-
+    
         .btn-outline-primary:hover {
             background: #00aaff;
             color: #ffffff;
         }
-
+    
         /* Gallery Grid Layout */
         .gallery-grid {
             display: grid;
@@ -530,7 +561,7 @@
             gap: 1rem;
             padding: 1rem;
         }
-
+    
         .gallery-item {
             position: relative;
             overflow: hidden;
@@ -538,18 +569,18 @@
             box-shadow: 0 6px 20px rgba(0, 170, 255, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+    
         .gallery-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 30px rgba(0, 170, 255, 0.5);
         }
-
+    
         .gallery-image-wrapper {
             position: relative;
             width: 100%;
             padding-top: 75%;
         }
-
+    
         .gallery-img {
             position: absolute;
             top: 0;
@@ -560,11 +591,11 @@
             border-radius: 12px;
             transition: transform 0.3s ease;
         }
-
+    
         .gallery-item:hover .gallery-img {
             transform: scale(1.05);
         }
-
+    
         .gallery-overlay {
             position: absolute;
             top: 0;
@@ -579,11 +610,11 @@
             transition: opacity 0.3s ease;
             border-radius: 12px;
         }
-
+    
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
-
+    
         .gallery-caption {
             color: #ffffff;
             font-size: 1rem;
@@ -593,16 +624,19 @@
             transform: translateY(15px);
             transition: transform 0.3s ease;
         }
-
+    
         .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
-
+    
         /* Responsive Adjustments */
         @media (max-width: 576px) {
             .header { padding: 0.3rem 0; }
-            .logo-container { margin-left: 0.5rem; margin-top: 0.3rem; box-shadow: 0 5px 12px rgba(0, 170, 255, 0.5); }
-            .logo { width: 80px; }
+            .logo-container { margin-left: 0.5rem; margin-top: 0.3rem; padding: 0.3rem; }
+            .logo-wrapper { width: 60px; height: 60px; }
+            .logo-title { font-size: 1.25rem; }
+            .logo-subtitle { font-size: 0.75rem; }
+            .logo-text { margin-left: 0.75rem; }
             .navbar-nav { gap: 0.5rem; padding-top: 0.3rem; }
             .nav-link { font-size: 0.8rem; }
             .hero-carousel { height: 50vh; }
@@ -630,10 +664,10 @@
             .contact-card { padding: 1rem; }
             .timings-table { font-size: 0.9rem; }
         }
-
+    
         @media (min-width: 577px) and (max-width: 768px) {
             .logo-container { margin-left: 0.8rem; margin-top: 0.4rem; }
-            .logo { width: 80px; }
+            .logo-wrapper { width: 70px; height: 70px; }
             .nav-item:not(:last-child)::after { display: none; }
             .nav-link { font-size: 0.85rem; }
             .hero-carousel { height: 55vh; }
@@ -651,31 +685,31 @@
             .gallery-item { box-shadow: 0 5px 18px rgba(0, 170, 255, 0.3); }
             .gallery-item:hover { box-shadow: 0 10px 28px rgba(0, 170, 255, 0.45); }
         }
-
+    
         @media (min-width: 769px) and (max-width: 992px) {
             .logo-container { margin-left: 1rem; }
-            .logo { width: 80px; }
+            .logo-wrapper { width: 80px; height: 80px; }
         }
-
+    
         @media (min-width: 993px) {
             .logo-container { margin-left: 1rem; }
-            .logo { width: 80px; }
+            .logo-wrapper { width: 80px; height: 80px; }
         }
-
+    
         @media (max-width: 768px) {
             .navbar-nav { flex-direction: column; align-items: flex-start; background: #1a2b49; padding: 1rem; }
             .nav-item:not(:last-child)::after { display: none; }
             .map-toggle { top: 10px; left: 10px; }
             .map-toggle .btn { padding: 0.4rem 1rem; font-size: 0.9rem; }
         }
-
+    
         @media (min-width: 769px) and (max-width: 1200px) {
             .hero-carousel { height: 60vh; }
             .carousel-item { height: 60vh; }
             .carousel-control-prev-icon, .carousel-control-next-icon { padding: 1.2rem; }
             .carousel-caption { padding: 1rem; font-size: 1rem; }
         }
-
+    
         @media (min-width: 1201px) {
             .hero-carousel { height: 70vh; }
             .carousel-item { height: 70vh; }
@@ -699,13 +733,20 @@
     </style>
 </head>
 <body>
+    
     <!-- Header -->
     <header class="header">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
                 <div class="logo-container">
                     <a class="navbar-brand" href="/">
-                        <img src="/SRClasses/logo.png" alt="SR Classes Logo" class="logo">
+                        <div class="logo-wrapper">
+                            <img src="/SRClasses/logo.png" alt="SR Classes Logo" class="logo">
+                        </div>
+                        <div class="logo-text">
+                            <h1 class="logo-title">SR Classes</h1>
+                            <p class="logo-subtitle">Excellence in Education</p>
+                        </div>
                     </a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
